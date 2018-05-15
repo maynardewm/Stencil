@@ -1,4 +1,4 @@
-##Stencil Readme##
+# Stencil Readme #
 Version: 0.1
 Created: 08/27/13
 Author: Electronic Methods
