@@ -1,0 +1,272 @@
+/* ----------------------------------------------------------- 
+--------------------------------------------------------------
+
+	Stencil CSS Core
+
+	Version: 1.0
+	Created: 08/27/13
+ 
+	Copyright (c) 2013 Electronic Methods. All rights reserved.
+
+--------------------------------------------------------------
+----------------------------------------------------------- */
+
+/* ---------- CSS Reset ---------- */
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* ---------- VARIABLES ---------- */
+@screen-lg: 1220px;
+@screen-md: 980px;
+@screen-sm: 767px;
+
+@gutter-base: .75%;
+@padding-base: 1%;
+@base-font-color: #333;
+@nav-font-color: #FFF;
+
+/* ---------- GENERAL ---------- */
+html {
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+	-moz-box-sizing: border-box; /* Firefox */
+	box-sizing: border-box;
+}
+
+/* ---------- Typography ---------- */
+body {
+	font-family: "Open Sans", Helvetica, Arial, sans-serif;
+	line-height: 1.6em;
+	font-size: 14px;
+	font-weight: 300;
+}
+
+p {
+	padding-bottom: 1em;	
+}
+
+/* ---------- Title Tags ---------- */
+h1, h2, h3, h4, h5, h6 {
+	margin-bottom: .2em;
+	line-height: 1em;
+	font-weight: 500;
+}
+
+h1 {
+	font-size: 2.5em;
+}
+
+h2 {
+	font-size: 2em;
+}
+
+h3 {
+	font-size: 1.7em;
+}
+
+h4 {
+	font-size: 1.5em;
+}
+
+h5 {
+	font-size: 1.3em;
+}
+
+h6 {
+	font-size: 1.1em;
+}
+
+/* ---------- COLUMN ---------- */
+.column {
+	width: auto;
+	margin: 0 auto;
+	padding: @gutter-base * 2;
+}
+
+@media(min-width:@screen-sm) {
+	.column {
+		width: auto;
+	}
+}
+
+@media(min-width:@screen-md) {
+	.column {
+		width: 960px;
+		padding: 0px;	
+	}
+}
+
+@media(min-width:@screen-lg) {
+	.column {
+		width: 1200px;	
+	}
+}
+
+/* ---------- ROW ---------- */
+.row {
+	width: 100%;
+}
+
+.row:before, .row:after { content: ""; display: table; }
+.row:after { clear: both; }
+.row { zoom: 1; }
+
+
+/* ---------- SPANS ----------- */
+[class*="span"] {
+	width: 100%;
+	background-color: #EEE;
+	margin-top: 0px;
+	margin-bottom: @gutter-base * 2;
+	display: block;
+	-moz-box-sizing: border-box; /* Firefox */
+	box-sizing: border-box;
+	padding: @padding-base * 4 @padding-base * 4 0 @padding-base * 4;
+}
+
+
+@media(min-width:@screen-sm) {
+	[class*="span"] {
+		float: left;
+		padding: @padding-base * 2 @padding-base * 2 0 @padding-base * 2;
+		margin-left: @gutter-base;
+		margin-right: @gutter-base;
+	}
+	.span12 {
+		width: 100%;	
+	}
+	
+	.span11 {
+		width: 91.666666% - @gutter-base * 2;
+	}
+	
+	.span10 {
+		width: 83.333333% - @gutter-base * 2;	
+	}
+	
+	.span9 {
+		width: 75% - @gutter-base * 2;	
+	}
+	
+	.span8 {
+		width: 66.666666% - @gutter-base * 2;
+	}	
+	
+	.span7 {
+		width: 58.333333% - @gutter-base * 2;	
+	}
+	
+	.span6 {
+		width: 50% - @gutter-base * 2;
+	}
+	
+	.span5 {
+		width: 41.666666% - @gutter-base * 2;	
+	}
+	
+	.span4 {
+		width: 33.333333% - @gutter-base * 2;	
+	}
+	
+	.span3 {
+		width: 25% - @gutter-base * 2;	
+	}
+	
+	.span2 {
+		width: 16.666666% - @gutter-base * 2;	
+	}
+	
+	.span1 {
+		width: 16.666666% - @gutter-base * 2;
+	}
+}
+
+@media(min-width:@screen-md) {
+	[class*="span"] {
+		padding: @padding-base * 1.5;	
+	}
+	.span1 {
+		width: 8.333333% - @gutter-base * 2;
+	}
+}
+
+/* ---------- NAV ---------- */
+.nav {
+	width: 100%;
+	padding-top: 14px;
+	padding-bottom: 14px;
+	margin-bottom: @gutter-base * 2;
+	background-color: #000;	
+	color: #FFF;
+}
+
+.brand {
+	float: left;
+	margin-left: @gutter-base;
+	margin-right: @gutter-base;
+}
+
+.nav-collapse {
+	text-align: right;
+	margin-left: @gutter-base;
+	margin-right: @gutter-base;
+}
+
+.nav-menu li {
+	display: inline;
+	margin-left: @gutter-base *3;
+}
+
+.nav-menu li a {
+	color: @nav-font-color;	
+}
